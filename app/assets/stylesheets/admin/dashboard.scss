@@ -1,3 +1,46 @@
 // Place all the styles related to the admin/dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$button-blue: #197CA8;
+
+.dropdown-menu-right {
+  top: auto;
+}
+
+.fa.fa-cog {
+  color:  $button-blue;
+  font-size: 1.5em;
+}
+
+.blue-menu {
+  top: -5px;
+  right: -18px;
+  li {
+    span {
+      &.grayed {
+        color: #CCC;
+        padding: {
+          left: 20px;
+        }
+      }
+    }
+    a {
+      color: $button-blue;
+      &:hover {
+        color: $button-blue;
+        background: none;
+      }
+    }
+
+    i {
+      padding-right: 10px;
+    }
+
+    .right-align {
+      float: right;
+      padding-right: 0;
+    }
+
+  }
+}
