@@ -19,6 +19,10 @@
 #  role                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  avatar_file_name       :string
+#  avatar_content_type    :string
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 # Indexes
 #
@@ -31,6 +35,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "missing.jpg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   has_many :user_project_designations
   has_many :projects, through: :user_project_designations

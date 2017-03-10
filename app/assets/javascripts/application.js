@@ -17,4 +17,5 @@
 //= require jquery-ui
 //= require cocoon
 //= require sweetalert
+//= require jquery.remotipart
 //= require_tree .

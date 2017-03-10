@@ -12,7 +12,4 @@ html
     link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"
     = csrf_meta_tags
   body
-    - if user_signed_in?
-      .navbar
-        = render partial: 'application/navigation'
     = yield

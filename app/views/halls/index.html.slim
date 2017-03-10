@@ -1,9 +1,6 @@
 .bg
   .container
     h1 Source Points
-    
-    .navbar
-      = render partial: 'application/navigation'
 
     - @projects.all.each_with_index do |project, idx|
         / .col-md-3
@@ -12,7 +9,7 @@
           .bg-house data-target="#modal-member-#{idx}" data-toggle="modal" type="button"
             span = "#{project.name}"
           - project.users.each do |user|
-            .col-md-6
-              h3 = user.nickname
+            .col-md-6.padding-bottom
+              = link_to image_tag(user.avatar.url(:thumb), class: "avatar"), '#'
 
   = render partial: 'layouts/settings'

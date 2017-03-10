@@ -36,6 +36,7 @@ class Admin::UsersController < AdminController
         :email,
         :role,
         :password,
+        :avatar,
         user_project_designations_attributes: [:id, :_destroy, :user_id, :project_id]
       )
     end

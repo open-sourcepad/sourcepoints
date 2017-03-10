@@ -28,6 +28,8 @@ gem 'material_design_lite-rails', '~> 1.3'
 gem 'cocoon'
 gem 'sweetalert2'
 gem 'sweetalert-rails'
+gem 'paperclip'
+gem 'remotipart', '~> 1.2'
 
 group :development, :test do
   gem 'pry'
