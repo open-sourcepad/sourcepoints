@@ -1,6 +1,6 @@
 class Admin::UsersController < AdminController
 
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -16,6 +16,10 @@ class Admin::UsersController < AdminController
 
   def update
     @user.update(user_params)
+  end
+
+  def destroy
+    @user.destroy
   end
 
   private

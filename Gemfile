@@ -26,6 +26,8 @@ gem 'jquery-ui-rails'
 gem 'material_icons'
 gem 'material_design_lite-rails', '~> 1.3'
 gem 'cocoon'
+gem 'sweetalert2'
+gem 'sweetalert-rails'
 
 group :development, :test do
   gem 'pry'

@@ -1,6 +1,6 @@
 class Admin::ProjectsController < AdminController
 
-  before_action :set_project, only: [:edit, :update]
+  before_action :set_project, only: [:edit, :update, :destroy]
 
   def new
     @project = Project.new
@@ -16,6 +16,10 @@ class Admin::ProjectsController < AdminController
 
   def update
     @project.update(project_params)
+  end
+
+  def destroy
+    @project.destroy
   end
 
   private

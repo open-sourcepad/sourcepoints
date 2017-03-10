@@ -1,1 +1,16 @@
-window.location = "<%= admin_dashboard_index_path %>";
+<%- if @project.errors.any? %>
+  swal("<%= @project.errors.full_messages.first %>", "", "error");
+<% else %>
+  swal({
+      title: '',
+      text: "Project has been successfully created.",
+      type: "success",
+      showCancelButton: false,
+      confirmButtonText: "Ok",
+      closeOnConfirm: false
+  }, function(isConfirm){
+    if (isConfirm) {
+      window.location = "<%= admin_dashboard_index_path %>"
+    }
+  })
+<% end %>

@@ -1,1 +1,16 @@
-window.location = "<%= admin_dashboard_index_path %>";
+<%- if @user.errors.any? %>
+  swal("<%= @user.errors.full_messages.first %>", "", "error");
+<% else %>
+  swal({
+      title: '',
+      text: "User has been successfully created.",
+      type: "success",
+      showCancelButton: false,
+      confirmButtonText: "Ok",
+      closeOnConfirm: false
+  }, function(isConfirm){
+    if (isConfirm) {
+      window.location = "<%= admin_dashboard_index_path %>"
+    }
+  })
+<% end %>

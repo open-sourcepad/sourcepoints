@@ -31,7 +31,7 @@
                       | &nbsp;
                       | Edit
                   li
-                    =link_to '#' do
+                    =link_to admin_user_path(user), method: :delete, remote: true do
                       i.fa.fa-eye
                       | &nbsp;
                       | Delete

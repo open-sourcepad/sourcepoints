@@ -23,7 +23,7 @@
                       | &nbsp;
                       | Edit
                   li
-                    =link_to '#' do
+                    =link_to admin_project_path(project), method: :delete, remote: true do
                       i.fa.fa-eye
                       | &nbsp;
                       | Delete
