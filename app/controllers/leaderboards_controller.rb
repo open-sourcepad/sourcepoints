@@ -3,5 +3,6 @@ class LeaderboardsController < ApplicationController
 
   def show
     @projects = Project.all
+    @users = User.all
   end
 end
