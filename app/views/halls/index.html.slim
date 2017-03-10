@@ -7,8 +7,11 @@
 
     .row
       - @projects.all.each do |project|
+        - timestamp = Time.now.to_i.to_s + rand(0...3262010).to_s
+        = render 'modal', project: project, timestamp: timestamp
         .col-xs-3.house-container
           .bg-house
-            span = project.name
+            button data-target=".modal-#{timestamp}" data-toggle="modal" type="button"
+              span = project.name
 
   = render partial: 'layouts/settings'

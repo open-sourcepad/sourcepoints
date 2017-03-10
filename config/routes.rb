@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resource :leaderboard, only: [:index]
 
   namespace :admin do
-    resource :dashboard
+    resources :dashboard
     resources :users
     resources :projects
   end
