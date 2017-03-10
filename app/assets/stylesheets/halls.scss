@@ -1,0 +1,27 @@
+$architects: Architects Daughter, cursive;
+
+.project-name {
+  font-style: $architects;
+  font-size: 25px;
+  text-align: center;
+}
+
+input {
+  &.score {
+    margin: 15px;
+  }
+}
+
+.points-form {
+  border-top: 1px solid #e5e5e5;
+}
+
+textarea {
+  margin-bottom: 50px;
+}
+
+.pull-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
