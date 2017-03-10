@@ -1,8 +1,8 @@
 .login-bg
   .container
     .col-xs-4.col-xs-offset-4.login-in-panel#login-devise
-      h2 Log in
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      h2 Sign up
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
           = f.email_field :email, autofocus: true, :class => 'mdl-textfield__input'
@@ -11,15 +11,15 @@
         .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
           = f.password_field :password, autocomplete: "off", :class => 'mdl-textfield__input'
           = f.label :password, :class => "mdl-textfield__label dark-gray-text"
+          - if @minimum_password_length
+            em
+              | (#{@minimum_password_length} characters minimum)
+
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+          = f.password_field :password_confirmation, autocomplete: "off", :class => 'mdl-textfield__input'
+          = f.label :password_confirmation, :class => "mdl-textfield__label dark-gray-text"
 
         - if devise_mapping.rememberable?
           .col-xs-6
-            = f.submit 'Log In', :class => 'btn-warning mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'
-          .col-xs-6
-            = f.label :remember_me, :class => "mdl-checkbox mdl-js-checkbox"
-              = f.check_box :remember_me, :class => 'mdl-checkbox__input'
-              span.mdl-checkbox__label Remember Me
-      br
-      br
-      br
+            = f.submit 'Sign Up', :class => 'btn-warning mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'
       = render "devise/shared/links"
