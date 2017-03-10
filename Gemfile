@@ -19,6 +19,7 @@ gem 'devise'
 gem 'pg'
 gem 'figaro'
 gem "rails_12factor"
+# gem "font-awesome-rails"
 gem 'jquery-ui-sass-rails'
 # gem 'capistrano-rails', group: :development
 

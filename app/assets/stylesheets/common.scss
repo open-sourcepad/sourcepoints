@@ -1,0 +1,67 @@
+// Place all the styles related to the halls controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$kushan: Kaushan Script, cursive;
+$griffy: Griffy, cursive;
+
+html, body {
+  background: #FBFAF3;
+}
+
+h1 {
+  font-family: $griffy;
+  font-size: 80px;
+  text-align: center;
+}
+
+.wrap {
+  margin-top: 50px;
+  position: absolute;
+  left: 14%;
+}
+
+.box {
+  width:20%;
+  height:100px;
+  float:left;
+  background-color:white;
+  margin:25px 15px;
+  border-radius:5px;
+}
+
+.box h2{
+  font-family: $kushan;
+  text-align:center;
+  color:#fff;
+  margin-top: 10%;
+  text-shadow: 5px 3px #827979;
+}
+
+.box1 {
+  background-color: #484848;
+}
+
+.shadow1 {
+  position:relative;
+}
+
+.shadow1 {
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+}
+
+.shadow1 h2 {
+  width:87%;
+  height:60px;
+  margin-left:6%;
+  border-radius:5px;
+}
+
+.shadow1:before, .shadow1:after {
+  position:absolute;
+  content:"";
+  top:100px;bottom:5px;left:30px;right:30px;
+  z-index:-1;
+  box-shadow:0 0 40px 13px #486685;
+  border-radius:100px/20px;
+}
