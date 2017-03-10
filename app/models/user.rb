@@ -37,4 +37,16 @@ class User < ApplicationRecord
   has_many :user_points
 
   validates :email, uniqueness: true
+
+  def get_accumulated_individual_points
+    accumulated = 0
+
+    self.user_points.each do |points|
+      if points.created_at.beginning_of_week == DateTime.current.beginning_of_week
+        accumulated += points.score
+      end
+    end
+
+    accumulated
+  end
 end

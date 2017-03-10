@@ -3,8 +3,14 @@
     .modal-content
       .modal-header
         button.close data-dismiss="modal" type="button"  ×
-        h4.modal-title #{ project.name }
+        h4.modal-title
+          = project.name
+          = project.get_accumulated_points
       .modal-body
-        p Some text in the modal.
+        - project.users.each do |user|
+          = "#{ user.first_name } #{ user.last_name }"
+          br
+          strong Points: &emsp;
+          = user.get_accumulated_individual_points
       .modal-footer
         button.btn.btn-default data-dismiss="modal" type="button"  Close
