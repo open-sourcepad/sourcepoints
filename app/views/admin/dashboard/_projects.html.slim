@@ -18,7 +18,7 @@
                 i.fa.fa-cog.dropdown-toggle.option-tool aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
                 ul.dropdown-menu.dropdown-menu-right.blue-menu
                   li
-                    =link_to '#' do
+                    =link_to edit_admin_project_path(project), remote: true, 'data-toggle' => "modal", 'data-target' => '#projectModal', 'data-backdrop' => "static" do
                       i.fa.fa-eye
                       | &nbsp;
                       | Edit

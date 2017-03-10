@@ -1,5 +1,7 @@
 class Admin::ProjectsController < AdminController
 
+  before_action :set_project, only: [:edit, :update]
+
   def new
     @project = Project.new
   end
@@ -9,8 +11,19 @@ class Admin::ProjectsController < AdminController
     @project.save
   end
 
+  def edit
+  end
+
+  def update
+    @project.update(project_params)
+  end
+
   private
+    def set_project
+      @project = Project.find(params[:id])
+    end
+
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:id, :name)
     end
 end
