@@ -1,9 +1,9 @@
 .bg
   .container
+    h1 Source Points
+    
     .navbar
       = render partial: 'application/navigation'
-
-    h1 Source Points
 
     - @projects.all.each_with_index do |project, idx|
         / .col-md-3
