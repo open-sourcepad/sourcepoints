@@ -24,6 +24,15 @@ class Admin::UsersController < AdminController
     end
 
     def user_params
-      params.require(:user).permit(:id, :first_name, :last_name, :nickname, :email, :role, :password)
+      params.require(:user).permit(
+        :id,
+        :first_name,
+        :last_name,
+        :nickname,
+        :email,
+        :role,
+        :password,
+        user_project_designations_attributes: [:id, :_destroy, :user_id, :project_id]
+      )
     end
 end

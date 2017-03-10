@@ -24,6 +24,10 @@ class Admin::ProjectsController < AdminController
     end
 
     def project_params
-      params.require(:project).permit(:id, :name)
+      params.require(:project).permit(
+        :id, 
+        :name,
+        user_project_designations_attributes: [:id, :_destroy, :user_id, :project_id]
+      )
     end
 end
