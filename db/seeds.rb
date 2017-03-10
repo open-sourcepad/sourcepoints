@@ -25,3 +25,8 @@ UserProjectDesignation.create(user_id: User.find_by(nickname: 'pr').id, project_
 
 UserProjectDesignation.create(user_id: User.find_by(nickname: 'dj').id, project_id: Project.find_by(name: 'GrowthHacker').id)
 UserProjectDesignation.create(user_id: User.find_by(nickname: 'andy').id, project_id: Project.find_by(name: 'Blikee').id)
+
+UserPoint.create(score: 10, user_id: User.first.id, project_id: Project.first.id, remarks: "test", category: "CIT")
+UserPoint.create(score: 10, user_id: User.first.id, project_id: Project.first.id, remarks: "test", category: "CIT")
+UserPoint.create(score: 10, user_id: User.last.id, project_id: Project.last.id, remarks: "test", category: "CIT")
+UserPoint.create(score: 10, user_id: User.last.id, project_id: Project.last.id, remarks: "test", category: "CIT")

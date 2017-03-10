@@ -14,6 +14,8 @@ class Project < ApplicationRecord
   has_many :user_points
   accepts_nested_attributes_for :user_project_designations, :allow_destroy => true
 
+  before_destroy :destroy_user_points
+
   def get_accumulated_points
     accumulated = 0
 
@@ -25,6 +27,15 @@ class Project < ApplicationRecord
       end
     end
     accumulated
+  end
+
+  private
+
+  def destroy_user_points
+    user_points = UserPoint.where(project_id: self.id)
+    if user_points.any?
+      user_points.destroy_all
+    end
   end
 
 end

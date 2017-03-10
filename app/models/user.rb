@@ -46,6 +46,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   accepts_nested_attributes_for :user_project_designations, :allow_destroy => true
 
+  before_destroy :destroy_user_points
+
   def get_accumulated_individual_points
     accumulated = 0
 
@@ -56,6 +58,13 @@ class User < ApplicationRecord
     end
 
     accumulated
+  end
+
+  def destroy_user_points
+    user_points = UserPoint.where(project_id: self.id)
+    if user_points.any?
+      user_points.destroy_all
+    end
   end
 
 end
