@@ -1,0 +1,6 @@
+.nested-fields
+  = f.hidden_field :user_id, value: @user.id
+  .col-md-8
+    = f.select :project_id, options_from_collection_for_select(Project.all.order(:name), 'id', 'name', f.object.project_id), {prompt: "Select Project"}, class: 'form-control'
+  .col-md-4
+    = link_to_remove_association "Remove", f, {class: "btn btn-danger remove-btn"}

@@ -25,6 +25,7 @@ gem 'jquery-ui-rails'
 # gem 'capistrano-rails', group: :development
 gem 'material_icons'
 gem 'material_design_lite-rails', '~> 1.3'
+gem 'cocoon'
 
 group :development, :test do
   gem 'pry'

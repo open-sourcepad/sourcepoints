@@ -12,4 +12,6 @@ class Project < ApplicationRecord
   has_many :user_project_designations
   has_many :users, through: :user_project_designations
   has_many :user_points
+
+  accepts_nested_attributes_for :user_project_designations, :allow_destroy => true
 end

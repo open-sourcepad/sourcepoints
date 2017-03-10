@@ -11,6 +11,12 @@
           .col-md-8
             = f.text_field :name, class: 'form-control'
 
+        .form-group.row
+          = f.fields_for :user_project_designations do |user_project_designation|
+            = render 'user_project_designation_fields', f: user_project_designation
+          .links
+            = link_to_add_association '+ Add User', f, :user_project_designations
+
         = f.submit 'Save', class: 'btn btn-warning'
 
     .modal-footer
