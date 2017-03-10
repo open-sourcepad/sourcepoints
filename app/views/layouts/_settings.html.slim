@@ -1,0 +1,13 @@
+.bg-settings#demo-menu-top-right.mdl-button.mdl-js-button
+#bg-setting-tooltip
+  .speech-bubble
+    .arrow.bottom.right
+    | Click me for the Settings
+
+ul.menu-color-white.mdl-menu.mdl-menu--top-right.mdl-js-menu.mdl-js-ripple-effect data-mdl-for="demo-menu-top-right"
+  li.mdl-menu__item
+    = link_to 'Admin Panel', admin_dashboard_path
+  li.mdl-menu__item
+    = link_to 'Hall', root_path
+  li.mdl-menu__item
+    = link_to 'Logout', destroy_user_session_path, :method => :delete
