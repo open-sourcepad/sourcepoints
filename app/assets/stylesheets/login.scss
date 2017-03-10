@@ -1,0 +1,19 @@
+.login-bg {
+  background: url('/assets/bg_login.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.login-in-panel {
+  margin-top: 25%;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+}

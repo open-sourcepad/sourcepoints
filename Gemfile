@@ -19,13 +19,11 @@ gem 'devise'
 gem 'pg'
 gem 'figaro'
 gem "rails_12factor"
-# gem "font-awesome-rails"
-gem 'jquery-ui-sass-rails'
-# gem 'capistrano-rails', group: :development
-
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'material_icons'
 gem 'jquery-ui-rails'
+# gem "font-awesome-rails"
+
+# gem 'capistrano-rails', group: :development
+gem 'material_icons'
 gem 'material_design_lite-rails', '~> 1.3'
 
 group :development, :test do
