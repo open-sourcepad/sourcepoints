@@ -5,11 +5,17 @@
 
     h1 Source Points
 
-    .row
-      - @projects.all.each_with_index do |project, idx|
-        = render 'modal_member_list', project: project, id: idx
-        .col-xs-4.house-container
-          .bg-house data-target="#modal-member-#{idx}" data-toggle="modal" type="button"
-            span = project.name
+    - @projects.all.each_with_index do |project, idx|
+      .row
+        .col-md-4
+          = render 'modal_member_list', project: project, id: idx
+          .col-xs-4.house-container
+            .bg-house data-target="#modal-member-#{idx}" data-toggle="modal" type="button"
+              span = project.name
+        .col-md-8
+          .row
+            - project.users.each do |user|
+              .col-md-2
+                h3 = user.nickname
 
   = render partial: 'layouts/settings'
