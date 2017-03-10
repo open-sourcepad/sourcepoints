@@ -10,9 +10,8 @@
   Project.first_or_create(name: project)
 end
 
-['Topo', 'Gene', 'PR'].each do |user|
-  new_user = User.new(user)
+['topo', 'gene', 'pr'].each do |user|
+  new_user = User.first_or_create(nickname: user, password: 'password', email: "#{user}@sourcepad.com", role: 'admin')
   new_user.skip_confirmation!
   new_user.save!
-  Project.first.users.build_user
 end
