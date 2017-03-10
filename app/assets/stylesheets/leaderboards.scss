@@ -1,3 +1,31 @@
-// Place all the styles related to the leaderboards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$architects: Architects Daughter, cursive;
+
+.project-name {
+  font-style: $architects;
+  font-size: 25px;
+  text-align: center;
+}
+
+input {
+  &.score {
+    margin: 15px;
+  }
+}
+
+.points-form {
+  border-top: 1px solid #e5e5e5;
+}
+
+textarea {
+  margin-bottom: 50px;
+}
+
+.pull-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.align-right {
+  text-align: right;
+}

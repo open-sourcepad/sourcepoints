@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'halls#index'
 
   resource :hall, only: [:index]
-  resource :leaderboard, only: [:index]
+  resource :leaderboard
   resources :user_points
 
   namespace :admin do
