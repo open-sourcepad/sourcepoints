@@ -49,13 +49,14 @@ li a:hover {
 .menu-color-white li, .menu-color-white li a {
   color: black !important;
   background-color: white !important;
-  with: 100%;
+  width: 100%;
 }
 
 
 .menu-color-white li a:hover {
   color: black !important;
   background-color: white !important;
+}
 
 .box h2{
   font-family: $architects;
