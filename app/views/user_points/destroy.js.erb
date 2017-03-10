@@ -1,0 +1,4 @@
+swal("Deleted!", "", "success");
+$('.point-for-<%= params[:id] %>').remove();
+
+$('.total-points').html('<label><%= "Total Points: #{UserPoint.where(user_id: @user_point.user.id).sum(&:score)}" %></label>');

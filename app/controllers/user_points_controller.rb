@@ -1,11 +1,21 @@
 class UserPointsController < ApplicationController
 
+  def new
+    @user_point = UserPoint.new
+    @project = Project.find(params[:project_id])
+    @user = User.find(params[:user_id])
+    @points = UserPoint.all.where(user_id: @user.id, project_id: @project.id)
+  end
+
   def create
-    user_point = UserPoint.new(user_points_params)
-    user_point.category = category(params[:score].to_i)
-    user_point.save
-    
-    redirect_to root_path
+    @user_point = UserPoint.new(user_points_params)
+    @user_point.category = category(params[:score].to_i)
+    @user_point.save
+  end
+
+  def destroy
+    @user_point = UserPoint.find(params[:id])
+    @user_point.destroy
   end
 
   private

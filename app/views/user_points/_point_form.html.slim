@@ -1,0 +1,56 @@
+.modal-dialog role="dialog"
+  /! Modal content
+  .modal-content
+    .modal-header
+      button.close data-dismiss="modal" type="button"  &times;
+      h4.modal-title = @project.name
+    .modal-body
+      = image_tag @user.avatar.url(:small), class:"avatar"
+      = label_tag "#{@user.first_name}"
+
+      = form_for :user_points, url: user_points_path, remote: true do |f|
+        .form-group
+          = f.hidden_field :project_id, value: @project.id
+          = f.hidden_field :user_id, value: @user.id
+
+          .total-points
+            = f.label "Total Points: #{UserPoint.where(user_id: @user.id).sum(&:score)}"
+
+          label.padding-right Score
+          = f.radio_button :score, 1, class: 'score'
+          = f.label 1, class: 'padding-right'
+          = f.radio_button :score, 2, class: 'score'
+          = f.label 2, class: 'padding-right'
+          = f.radio_button :score, 3, class: 'score'
+          = f.label 3, class: 'padding-right'
+          = f.radio_button :score, 4, class: 'score'
+          = f.label 4, class: 'padding-right'
+          = f.radio_button :score, 5, class: 'score'
+          = f.label 5, class: 'padding-right'
+          = f.text_area :remarks, class: 'form-control'
+
+        = f.submit 'Save', class: 'btn btn-warning'
+
+      table.table.table-hover
+        thead
+          tr
+            th.col-md-1.text-center.vertical-center Category
+            th.col-md-1.text-center.vertical-center Remarks
+            th.col-md-1.text-center.vertical-center Options
+        tbody
+          - @points.each do |point|
+            tr class="point-for-#{point.id}"
+              td.text-center= "#{point.category} (#{point.score})"
+              td.text-center= point.remarks
+              td.text-center
+                .btn-group
+                  i.fa.fa-cog.dropdown-toggle.option-tool aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
+                  ul.dropdown-menu.dropdown-menu-right.blue-menu
+                    li
+                      =link_to user_point_path(point), method: :delete, remote: true do
+                        i.fa.fa-eye
+                        | &nbsp;
+                        | Delete
+
+    .modal-footer
+      button.btn.btn-default data-dismiss="modal" type="button"  Close

@@ -1,3 +1,5 @@
+#pointModal.modal.fade
+
 .bg
   .container
     h1 Source Points
@@ -10,6 +12,6 @@
             span = "#{project.name}"
           - project.users.each do |user|
             .col-md-6.padding-bottom
-              = link_to image_tag(user.avatar.url(:thumb), class: "avatar"), '#'
+              = link_to image_tag(user.avatar.url(:thumb), class: "avatar"), new_user_point_path(project_id: project.id, user_id: user.id), remote: true, 'data-toggle' => "modal", 'data-target' => '#pointModal', 'data-backdrop' => "static"
 
   = render partial: 'layouts/settings'

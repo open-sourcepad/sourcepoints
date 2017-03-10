@@ -16,6 +16,8 @@ class UserPoint < ApplicationRecord
   belongs_to :user
   belongs_to :project
 
+  after_save :set_category
+
   scope :project, -> (project_id) { where(project_id: project_id) }
   scope :user, -> (user_id) { where(user_id: user_id) }
   scope :this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
@@ -30,5 +32,13 @@ class UserPoint < ApplicationRecord
       date = date - 1.days
     end
     [date..Date.today]
+  end
+
+  def set_category
+    if score < 5 && score > 0
+      self.update_column(:category, "Shout out")
+    elsif score == 5
+      self.update_column(:category, "CIT")
+    end
   end
 end

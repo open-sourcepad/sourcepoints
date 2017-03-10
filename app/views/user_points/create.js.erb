@@ -1,0 +1,16 @@
+<%- if @user_point.errors.any? %>
+  swal("<%= @user_point.errors.full_messages.first %>", "", "error");
+<% else %>
+  swal({
+      title: '',
+      text: "SourcePoint has been successfully added.",
+      type: "success",
+      showCancelButton: false,
+      confirmButtonText: "Ok",
+      closeOnConfirm: false
+  }, function(isConfirm){
+    if (isConfirm) {
+      window.location = "<%= root_path %>"
+    }
+  })
+<% end %>

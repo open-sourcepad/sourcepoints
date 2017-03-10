@@ -1,37 +1,37 @@
-#myModal.modal.fade class="modal-#{timestamp}" role="dialog"
+#pointModal.modal.fade role="dialog"
   .modal-dialog
     /! Modal content
     .modal-content
       .modal-header
         button.close data-dismiss="modal" type="button"  &times;
-        h4.project-name = project.name
-      .modal-body
-        - project.users.each do |user|
-          .inline
-            .row
-              h4.col-md-7 = user.nickname.capitalize
-              h4.col-md-5.align-right
-                = "Total points: #{user.user_points.sum(:score)}"
-      .points-form
-        .modal-body
-          = form_for :user_points, url: user_points_path do |f|
-            .form-group
-              = f.hidden_field :project_id, value: project.id
-              = f.label :user, 'Member'
-              = f.select :user_id, options_from_collection_for_select(project.users, 'id', 'nickname'), {}, class: 'form-control'
-              label Score
-              = f.radio_button :score, 1, class: 'score'
-              | 1
-              = f.radio_button :score, 2, class: 'score'
-              | 2
-              = f.radio_button :score, 3, class: 'score'
-              | 3
-              = f.radio_button :score, 4, class: 'score'
-              | 4
-              = f.radio_button :score, 5, class: 'score'
-              | 5
-              = f.text_area :remarks, class: 'form-control'
+        h4.project-name PROJECT
+      / .modal-body
+      /   - project.users.each do |user|
+      /     .inline
+      /       .row
+      /         h4.col-md-7 = user.nickname.capitalize
+      /         h4.col-md-5.align-right
+      /           = "Total points: #{user.user_points.sum(:score)}"
+      / .points-form
+      /   .modal-body
+      /     = form_for :user_points, url: user_points_path do |f|
+      /       .form-group
+      /         = f.hidden_field :project_id, value: project.id
+      /         = f.label :user, 'Member'
+      /         = f.select :user_id, options_from_collection_for_select(project.users, 'id', 'nickname'), {}, class: 'form-control'
+      /         label Score
+      /         = f.radio_button :score, 1, class: 'score'
+      /         | 1
+      /         = f.radio_button :score, 2, class: 'score'
+      /         | 2
+      /         = f.radio_button :score, 3, class: 'score'
+      /         | 3
+      /         = f.radio_button :score, 4, class: 'score'
+      /         | 4
+      /         = f.radio_button :score, 5, class: 'score'
+      /         | 5
+      /         = f.text_area :remarks, class: 'form-control'
               
-            = submit_tag 'Add Points', class: 'btn btn-warning pull-right'
-      .modal-footer
-        button.btn.btn-default data-dismiss="modal" type="button"  Close
+      /       = submit_tag 'Add Points', class: 'btn btn-warning pull-right'
+      / .modal-footer
+      /   button.btn.btn-default data-dismiss="modal" type="button"  Close
