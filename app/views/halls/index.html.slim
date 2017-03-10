@@ -1,7 +1,9 @@
-.login-bg
-  h1 SourcePad Hall
+div.navbar
+  = render partial: 'application/navigation'
 
-  .wrap
-    - @projects.all.each do |project|
-      .box.box1.shadow1
-        h2 = project.name
+h1 SourcePad Hall
+
+.wrap
+  - @projects.all.each do |project|
+    .box.box1.shadow1
+      h2 = project.name

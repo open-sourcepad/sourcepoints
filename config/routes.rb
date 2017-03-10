@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   root 'halls#index'
 
   resource :hall, only: [:index]
+  resource :leaderboard, only: [:index]
+
+  namespace :admin do
+    resource :dashboard
+    resources :users
+    resources :projects
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
