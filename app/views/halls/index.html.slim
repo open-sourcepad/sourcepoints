@@ -7,3 +7,9 @@ h1 SourcePad Hall
   - @projects.all.each do |project|
     .box.box1.shadow1
       h2 = project.name
+
+      - timestamp = Time.now.to_i.to_s + rand(0...3262010).to_s
+      button data-target=".modal-#{timestamp}" data-toggle="modal" type="button"
+        = project.name
+
+    = render 'modal', project: project, timestamp: timestamp
