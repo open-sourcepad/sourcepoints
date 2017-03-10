@@ -12,8 +12,16 @@ Project.destroy_all
   Project.create(name: project)
 end
 
-# ['topo', 'gene', 'pr'].each do |user|
-#   new_user = User.first_or_create(nickname: user, password: 'password', email: "#{user}@sourcepad.com", role: 'admin')
-#   new_user.skip_confirmation!
-#   new_user.save!
-# end
+User.destroy_all
+['topo', 'gene', 'pr', 'dj', 'andy'].each do |user|
+  new_user = User.new(nickname: user, password: 'password', email: "#{user}@sourcepad.com", role: 'admin')
+  new_user.save
+end
+
+UserProjectDesignation.destroy_all
+UserProjectDesignation.create(user_id: User.find_by(nickname: 'topo').id, project_id: Project.find_by(name: 'SMS360').id)
+UserProjectDesignation.create(user_id: User.find_by(nickname: 'gene').id, project_id: Project.find_by(name: 'SMS360').id)
+UserProjectDesignation.create(user_id: User.find_by(nickname: 'pr').id, project_id: Project.find_by(name: 'SMS360').id)
+
+UserProjectDesignation.create(user_id: User.find_by(nickname: 'dj').id, project_id: Project.find_by(name: 'GrowthHacker').id)
+UserProjectDesignation.create(user_id: User.find_by(nickname: 'andy').id, project_id: Project.find_by(name: 'Blikee').id)
