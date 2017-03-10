@@ -1,5 +1,7 @@
 class Admin::UsersController < AdminController
 
+  before_action :set_user, only: [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -9,8 +11,19 @@ class Admin::UsersController < AdminController
     @user.save
   end
 
+  def edit
+  end
+
+  def update
+    @user.update(user_params)
+  end
+
   private
+    def set_user
+      @user = User.find(params[:id])
+    end
+
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :nickname, :email, :role, :password)
+      params.require(:user).permit(:id, :first_name, :last_name, :nickname, :email, :role, :password)
     end
 end

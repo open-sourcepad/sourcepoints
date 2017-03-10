@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resource :hall, only: [:index]
   resource :leaderboard, only: [:index]
+  resources :user_points
 
   namespace :admin do
     resources :dashboard

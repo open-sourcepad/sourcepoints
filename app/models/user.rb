@@ -34,6 +34,7 @@ class User < ApplicationRecord
 
   has_many :user_project_designations
   has_many :projects, through: :user_project_designations
+  has_many :user_points
 
   validates :email, uniqueness: true
 end

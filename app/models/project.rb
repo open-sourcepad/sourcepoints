@@ -11,4 +11,5 @@
 class Project < ApplicationRecord
   has_many :user_project_designations
   has_many :users, through: :user_project_designations
+  has_many :user_points
 end

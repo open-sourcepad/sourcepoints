@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: user_points
+#
+#  id         :integer          not null, primary key
+#  score      :integer          default(0)
+#  remarks    :text
+#  user_id    :integer
+#  project_id :string
+#  category   :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score: 1
+  remarks: MyText
+  user_id: 1
+  project_id: MyString
+  integer: MyString
+
+two:
+  score: 1
+  remarks: MyText
+  user_id: 1
+  project_id: MyString
+  integer: MyString
