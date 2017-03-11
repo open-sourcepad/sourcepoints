@@ -48,6 +48,10 @@ class User < ApplicationRecord
 
   before_destroy :destroy_user_points
 
+  def complete_name
+    [first_name, last_name].join(' ')
+  end
+
   def get_accumulated_individual_points
     accumulated = 0
 
