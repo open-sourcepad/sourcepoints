@@ -1,19 +1,21 @@
-h1 SourcePad Hall
+.bg
+  .container
+    h1 SourcePad Hall
 
-= render partial: 'weekly_points', locals: {projects: @projects, users: @users}
-= render partial: 'monthly_points', locals: {projects: @projects, users: @users}
-= render partial: 'all_points', locals: {projects: @projects, users: @users}
+    = render partial: 'weekly_points', locals: {projects: @projects, users: @users}
+    = render partial: 'monthly_points', locals: {projects: @projects, users: @users}
+    = render partial: 'all_points', locals: {projects: @projects, users: @users}
 
-    
-  
-/ .wrap
-/   - @projects.all.each do |project|
-/     .box.box1.shadow1
-/       h2 = project.name
-/ 
-/       button data-target=".modal-#{timestamp}" data-toggle="modal" type="button"
-/         = project.name
-/ 
-/     = render 'modal', project: project, timestamp: timestamp
-    
-= render partial: 'layouts/settings'
+
+
+    / .wrap
+    /   - @projects.all.each do |project|
+    /     .box.box1.shadow1
+    /       h2 = project.name
+    /
+    /       button data-target=".modal-#{timestamp}" data-toggle="modal" type="button"
+    /         = project.name
+    /
+    /     = render 'modal', project: project, timestamp: timestamp
+
+  = render partial: 'layouts/settings'

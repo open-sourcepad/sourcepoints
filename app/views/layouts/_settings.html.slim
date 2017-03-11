@@ -1,10 +1,10 @@
-.bg-settings#demo-menu-top-right.mdl-button.mdl-js-button
+.bg-settings#menu-settings.mdl-button.mdl-js-button
 #bg-setting-tooltip
   .speech-bubble
     .arrow.bottom.right
     | Click me for the Settings
 
-ul.menu-color-white.mdl-menu.mdl-menu--top-right.mdl-js-menu.mdl-js-ripple-effect data-mdl-for="demo-menu-top-right"
+ul.menu-color-white.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect data-mdl-for="menu-settings"
   - if current_user.role == 'admin'
     li.mdl-menu__item
       = link_to 'Admin Panel', admin_dashboard_index_path

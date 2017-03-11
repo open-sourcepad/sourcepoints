@@ -6,17 +6,17 @@
   background-size: cover;
   width: 200px;
   height: 150px;
-  bottom: 0;
+  top: 20px;
   right: 0;
   margin-bottom: 20px;
   margin-right: 20px;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
 }
 
 #bg-setting-tooltip {
   position: absolute;
-  bottom: 200px;
+  top: 20px;
   right: 300px;
 }
 
@@ -27,7 +27,7 @@
   width: 110px;
   text-align: center;
   padding: 20px;
-  position: absolute;
+  position: fixed;
 }
 
 .speech-bubble .arrow {

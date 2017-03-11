@@ -1,8 +1,9 @@
-h1 Admin Dashboard
+.bg
+  h1 Admin Dashboard
 
-.container
-  = render 'users'
-  = render 'projects'
-  = render 'user_points'
+  .container.admin
+    = render 'users'
+    = render 'projects'
+    = render 'user_points'
 
-= render partial: 'layouts/settings'
+  = render partial: 'layouts/settings'
