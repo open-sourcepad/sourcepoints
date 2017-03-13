@@ -23,6 +23,6 @@
             - users.each do |user|
               tr
                 td
-                  h6 = user.nickname.capitalize
+                  h6 = user.nickname
                 td
                   = UserPoint.user(user.id).this_month.sum(&:score)

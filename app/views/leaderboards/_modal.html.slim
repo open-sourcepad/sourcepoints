@@ -9,7 +9,7 @@
         - project.users.each do |user|
           .inline
             .row
-              h4.col-md-7 = user.nickname.capitalize
+              h4.col-md-7 = user.nickname
               h4.col-md-5.align-right
                 = "Total points: #{user.user_points.sum(:score)}"
       .points-form
