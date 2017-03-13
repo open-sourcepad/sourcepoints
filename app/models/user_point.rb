@@ -28,7 +28,7 @@ class UserPoint < ApplicationRecord
 
   def self.get_week_range
     date = Date.today
-    while date.wday >= 5  do
+    while date.wday != 4  do
       date = date - 1.days
     end
     [date..Date.today]
