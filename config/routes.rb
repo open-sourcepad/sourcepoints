@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resource :hall, only: [:index]
   resource :leaderboard
   resources :user_points
+  resources :redeemed_points, only: [:index, :show, :new, :create]
 
   namespace :admin do
     resources :dashboard

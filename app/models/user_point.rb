@@ -46,6 +46,6 @@ class UserPoint < ApplicationRecord
   def add_to_remaining_points
     total_points = self.user.remaining_points
     earned_points = self.score
-    self.user.update_column(remaining_points: total_points + earned_points)
+    self.user.update_attributes(remaining_points: total_points + earned_points)
   end
 end

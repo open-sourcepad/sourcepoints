@@ -1,0 +1,16 @@
+#redeemModal.modal.fade
+
+.row
+  .col-md-12
+    h2 Redeemed Prizes
+    = link_to "Redeem Prize".html_safe, new_redeemed_point_path, remote: true, 'data-toggle' => "modal", 'data-target' => '#redeemModal', 'data-backdrop' => "static"
+    table.table.table-hover
+      thead
+        tr
+          th.col-md-1.text-center.vertical-center Prize
+          th.col-md-1.text-center.vertical-center Date Redeemed
+      tbody
+        - @redeemed_prizes.each do |redeemed_prize|
+          tr class="redeemed-for-#{redeemed_prize.id}"
+            td.text-center= redeemed_prize.redeemable.name
+            td.text-center= redeemed_prize.created_at.strftime("%B %d, %Y")

@@ -12,4 +12,22 @@
 class RedeemedPoint < ApplicationRecord
   belongs_to :redeemable
   belongs_to :user
+
+  after_save :deduct_points
+
+  validate :enough_points
+
+  def deduct_points
+    points = self.user.remaining_points - self.redeemable.points
+    if points >= 0
+      self.user.update_attributes(remaining_points: points)
+    end
+  end
+
+  def enough_points
+    points = self.user.remaining_points - self.redeemable.points
+    if points < 0
+      errors.add(:remaining_points, "is insufficient.")
+    end
+  end
 end

@@ -1,0 +1,30 @@
+.redeemed_points {
+
+  h4 {
+    font-family: $kushan;
+    font-weight: bold;
+    border-bottom: 2px solid #b58248;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+    background-color: rgba(176,141,102,0.3);
+  }
+
+  h5 {
+    font-family: $architects;
+    font-weight: bold;
+  }
+
+  .list-bg {
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+  }
+
+  .faded-bg {
+    @include bg-gradient(rgba(255,255,255,0.2));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}

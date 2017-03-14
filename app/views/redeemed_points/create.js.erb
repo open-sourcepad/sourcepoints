@@ -1,0 +1,16 @@
+<%- if @redeemed_prize.errors.any? %>
+  swal("<%= @redeemed_prize.errors.full_messages.first %>", "", "error");
+<% else %>
+  swal({
+      title: '',
+      text: "You have redeemed a prize.",
+      type: "success",
+      showCancelButton: false,
+      confirmButtonText: "Ok",
+      closeOnConfirm: false
+  }, function(isConfirm){
+    if (isConfirm) {
+      window.location = "<%= redeemed_points_path %>"
+    }
+  })
+<% end %>
