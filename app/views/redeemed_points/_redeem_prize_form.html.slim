@@ -6,10 +6,10 @@
       h4.modal-title Redeem Prize
     .modal-body
       = label_tag "Remaining Points: #{current_user.remaining_points}"
-      = form_for @redeemed_prize, remote: true do | f |
+      = form_for @redeemed_prizes, remote: true do | f |
         = f.hidden_field :user_id, value: current_user.id
         .form-group.row
-          = f.label :Prize, 'Prize', class: 'control-label col-md-4'
+          = f.label :Prize, 'Perks', class: 'control-label col-md-4'
           .col-md-8
             = f.select :redeemable_id, options_from_collection_for_select(Redeemable.all.order(:name), 'id', 'name', f.object.redeemable_id), {prompt: "Select Prize"}, class: 'form-control'
 

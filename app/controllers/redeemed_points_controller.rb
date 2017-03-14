@@ -3,7 +3,7 @@ class RedeemedPointsController < ApplicationController
   before_action :set_redeemable, only: [:edit, :update, :destroy]
 
   def index
-    @redeemed_prizes = RedeemedPoint.all
+    @redeemed_prizes = RedeemedPoint.joins(:redeemable).all
   end
 
   def new
