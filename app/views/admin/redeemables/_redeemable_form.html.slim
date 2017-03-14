@@ -1,0 +1,21 @@
+.modal-dialog role="dialog"
+  /! Modal content
+  .modal-content
+    .modal-header
+      button.close data-dismiss="modal" type="button"  &times;
+      h4.modal-title Redeemable
+    .modal-body
+      = form_for [:admin, @redeemable], remote: true do | f |
+        .form-group.row
+          = f.label :name, 'Name', class: 'control-label col-md-4'
+          .col-md-8
+            = f.text_field :name, class: 'form-control'
+        .form-group.row
+          = f.label :points, 'Points', class: 'control-label col-md-4'
+          .col-md-8
+            = f.number_field :points, class: 'form-control'
+
+        = f.submit 'Save', class: 'btn btn-warning'
+
+    .modal-footer
+      button.btn.btn-default data-dismiss="modal" type="button"  Close

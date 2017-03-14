@@ -13,7 +13,7 @@
       tbody
         - @points.each do |point|
           tr class="point-for-#{point.id}"
-            td.text-center= point.user.complete_name
+            td.text-center= point.user.nickname
             td.text-center= "#{point.category} (#{point.score})"
             td.text-center= point.remarks
             td.text-center

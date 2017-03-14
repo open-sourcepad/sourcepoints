@@ -18,7 +18,6 @@ class Project < ApplicationRecord
 
   def get_accumulated_points
     accumulated = 0
-
     self.users.each do |user|
       user.user_points.each do |points|
         if points.created_at.beginning_of_week == DateTime.current.beginning_of_week

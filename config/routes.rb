@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :dashboard
     resources :users
     resources :projects
+    resources :redeemables
   end
 
   # Example of regular route:

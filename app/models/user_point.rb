@@ -17,6 +17,7 @@ class UserPoint < ApplicationRecord
   belongs_to :project
 
   after_save :set_category
+  after_save :add_to_remaining_points
 
   scope :project, -> (project_id) { where(project_id: project_id) }
   scope :user, -> (user_id) { where(user_id: user_id) }
@@ -40,5 +41,11 @@ class UserPoint < ApplicationRecord
     elsif score == 5
       self.update_column(:category, "CIT")
     end
+  end
+
+  def add_to_remaining_points
+    total_points = self.user.remaining_points
+    earned_points = self.score
+    self.user.update_column(remaining_points: total_points + earned_points)
   end
 end

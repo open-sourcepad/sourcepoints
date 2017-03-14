@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310165506) do
+ActiveRecord::Schema.define(version: 20170314053110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 20170310165506) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "redeemables", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "redeemed_points", force: :cascade do |t|
+    t.integer  "redeemable_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "user_points", force: :cascade do |t|
@@ -59,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170310165506) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "remaining_points",       default: 0
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

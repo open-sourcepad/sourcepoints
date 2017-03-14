@@ -23,6 +23,7 @@
 #  avatar_content_type    :string
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  remaining_points       :integer          default(0)
 #
 # Indexes
 #
@@ -42,6 +43,7 @@ class User < ApplicationRecord
   has_many :user_project_designations
   has_many :projects, through: :user_project_designations
   has_many :user_points
+  has_many :redeemed_points
 
   validates :email, uniqueness: true
   accepts_nested_attributes_for :user_project_designations, :allow_destroy => true
