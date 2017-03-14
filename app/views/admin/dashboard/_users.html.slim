@@ -7,17 +7,17 @@
     table.table.table-hover
       thead
         tr
-          th.col-md-1.text-center.vertical-center First Name
-          th.col-md-1.text-center.vertical-center Last Name
-          th.col-md-1.text-center.vertical-center Nickname
+          / th.col-md-1.text-center.vertical-center First Name
+          / th.col-md-1.text-center.vertical-center Last Name
+          th.col-md-1.text-center.vertical-center Name
           th.col-md-1.text-center.vertical-center Email
           th.col-md-1.text-center.vertical-center Role
           th.col-md-1.text-center.vertical-center Options
       tbody
         - @users.each do |user|
           tr class="user-for-#{user.id}"
-            td.text-center= user.first_name
-            td.text-center= user.last_name
+            / td.text-center= user.first_name
+            / td.text-center= user.last_name
             td.text-center= user.nickname
             td.text-center= user.email
             td.text-center= user.role

@@ -7,18 +7,18 @@
     .modal-body
       = form_for [:admin, @user], remote: true do | f |
         = f.hidden_field :password, value: "password"
-        .form-group.row
-          = f.label :first_name, 'First Name', class: 'control-label col-md-4'
-          .col-md-8
-            = f.text_field :first_name, class: 'form-control'
+        / .form-group.row
+        /   = f.label :first_name, 'First Name', class: 'control-label col-md-4'
+        /   .col-md-8
+        /     = f.text_field :first_name, class: 'form-control'
+        / 
+        / .form-group.row
+        /   = f.label :lasst_name, 'Last Name', class: 'control-label col-md-4'
+        /   .col-md-8
+        /     = f.text_field :last_name, class: 'form-control'
 
         .form-group.row
-          = f.label :lasst_name, 'Last Name', class: 'control-label col-md-4'
-          .col-md-8
-            = f.text_field :last_name, class: 'form-control'
-
-        .form-group.row
-          = f.label :nickname, 'Nickname', class: 'control-label col-md-4'
+          = f.label :nickname, 'Name', class: 'control-label col-md-4'
           .col-md-8
             = f.text_field :nickname, class: 'form-control'
 
